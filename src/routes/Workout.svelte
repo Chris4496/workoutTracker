@@ -1,6 +1,9 @@
 <script>
   import TabNav from "../lib/TabNav.svelte";
   import NumberInput from "../lib/NumberInput.svelte";
+  import DeleteWorkoutButtonNModal from "../lib/DeleteWorkoutButtonNModal.svelte";
+  import DeleteRecordsButtonNModal from "../lib/DeleteRecordsButtonNModal.svelte";
+  
 
   import { workoutIds, workoutIdNameRef, workoutIdInfo } from "../stores";
 
@@ -158,6 +161,8 @@
       <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
         <div class="flex flex-col">
           <h2 class="text-3xl font-bold sm:text-5xl">Settings</h2>
+          <DeleteWorkoutButtonNModal workoutId={id} />
+          <!-- <DeleteRecordsButtonNModal workoutId={id} /> -->
         </div>
       </div>
     {/if}

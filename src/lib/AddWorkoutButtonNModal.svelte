@@ -31,6 +31,11 @@
       alert("Workout already exists");
       return;
     }
+    // check if workout name is empty
+    if (workoutName === "") {
+      alert("Workout name cannot be empty");
+      return;
+    }
     $workoutIds = [...$workoutIds, workoutId];
     $workoutIdNameRef[workoutId] = workoutName;
     initWorkoutInfo(workoutId);
