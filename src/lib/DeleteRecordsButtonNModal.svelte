@@ -55,7 +55,7 @@
                 <p class="mt-2 text-sm text-gray-500">
                   Select the records you want to delete.
                 </p>
-                <div class="h-40 overflow-y-auto">
+                <div class="max-h-40 overflow-y-auto">
                 {#each selectedRecords as record}
                   <div class="flex flex-row items-center justify-between mt-4">
                     <div class="flex flex-row items-center">
