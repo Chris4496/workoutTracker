@@ -4,7 +4,9 @@
     export let workoutId;
   
     let showModal = false;
-    let selectedRecordsIdxs = [];
+    let selectedRecords = $workoutIdInfo[workoutId].history.map((record) => {
+      return { date: record.date, selected: false };
+    });
   
     function toggleModal() {
       showModal = !showModal;
@@ -12,10 +14,17 @@
   
     function handleSubmit(e) {
       e.preventDefault();
-      console.log("submitted");
-      console.log(workoutId);
-
-      location.replace("/");
+      // remove selected records from history
+      $workoutIdInfo[workoutId].history = $workoutIdInfo[
+        workoutId
+      ].history.filter((record) => {
+        return !selectedRecords.find(
+          (selectedRecord) =>
+            selectedRecord.date === record.date &&
+            selectedRecord.selected === true
+        );
+      });
+      
       toggleModal();
     }
   </script>
@@ -46,7 +55,18 @@
                 <p class="mt-2 text-sm text-gray-500">
                   Select the records you want to delete.
                 </p>
-
+                {#each selectedRecords as record}
+                  <div class="flex flex-row items-center justify-between mt-4">
+                    <div class="flex flex-row items-center">
+                      <input
+                        type="checkbox"
+                        class="form-checkbox h-5 w-5 text-red-600"
+                        bind:checked={record.selected}
+                      />
+                      <p class="ml-2 text-gray-500">{new Date(record.date).toLocaleDateString()} - {new Date(record.date).toLocaleTimeString()}</p>
+                    </div>
+                  </div>
+                {/each}
   
                 <div
                   class="flex flex-row flex-wrap justify-evenly space-x-3 mt-4"
