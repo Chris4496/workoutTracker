@@ -105,7 +105,7 @@
         <div class="flex flex-col items-center mb-8">
           <h3 class="text-2xl font-bold sm:text-3xl my-4">Reps:</h3>
           <NumberInput bind:number={reps} />
-          <h3 class="text-2xl font-bold sm:text-3xl mt-4">Weight (kg):</h3>
+          <h3 class="text-2xl font-bold sm:text-3xl my-4">Weight (kg):</h3>
           <NumberInput bind:number={weight} />
           <button
             class="flex items-center justify-center px-8 py-4 my-6 font-bold transition bg-blue-100 border-4 border-black rounded-xl focus:outline-none focus:ring shadow-[6px_6px_0_0_#000] hover:shadow-none active:bg-blue-50"
