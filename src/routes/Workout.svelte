@@ -107,7 +107,6 @@
           <NumberInput bind:number={reps} />
           <h3 class="text-2xl font-bold sm:text-3xl mt-4">Weight:</h3>
           <h4 class="text-md font-bold sm:text-lg my-1">(kg)</h4>
-          <h4 class="text-md font-bold sm:text-lg mb-4">0 if not applicable</h4>
           <NumberInput bind:number={weight} />
           <button
             class="flex items-center justify-center px-8 py-4 my-6 font-bold transition bg-blue-100 border-4 border-black rounded-xl focus:outline-none focus:ring shadow-[6px_6px_0_0_#000] hover:shadow-none active:bg-blue-50"
